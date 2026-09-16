@@ -146,6 +146,19 @@
     border-color:var(--line);
   }
   .card.soon:hover::before,.card.soon:focus-visible::before{transform:scaleX(0);}
+  .group+.group{margin-top:38px;}
+  .sec{
+    font-size:.8rem;
+    font-weight:800;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:#7A7691;
+    margin:0 0 16px;
+    padding-bottom:9px;
+    border-bottom:1px solid var(--line);
+  }
+  .notlive .sec{color:#A08243;border-bottom-color:#EADFC6;}
+  .notlive .card{background:#FBFAF7;}
   .wip{
     display:inline-flex;
     align-items:center;
@@ -238,6 +251,8 @@
     .tagline{grid-area:tag;font-size:.7rem;line-height:1.35;margin:1px 0 0;max-width:none;}
 
     main{padding:10px 11px 18px;}
+    .group+.group{margin-top:18px;}
+    .sec{font-size:.68rem;letter-spacing:.09em;margin:0 0 8px;padding:0 2px 5px;}
     .grid{grid-template-columns:1fr;gap:7px;}
 
     .card{
@@ -299,9 +314,14 @@
 </header>
 
 <main>
-  <div class="grid">
 
-    <!-- ============ ADD NEW SITES BY COPYING ONE <a class="card"> BLOCK ============ -->
+  <!-- ===== ADD A SITE: copy one <a class="card"> block into the right
+       <section class="group">. Sections are Field / Shop / Office /
+       Not Live. The section heading carries the status. ===== -->
+
+  <section class="group">
+    <h2 class="sec">Field</h2>
+    <div class="grid">
 
     <a class="card" href="https://www.utility.ryancont.com" target="_blank" rel="noopener">
       <div class="icon" aria-hidden="true">
@@ -329,19 +349,6 @@
       </div>
     </a>
 
-    <a class="card" href="https://schedule.ryancont.com" target="_blank" rel="noopener">
-      <div class="icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
-      </div>
-      <h2>Crew Schedule</h2>
-      <p>Which crew is at which job, day by day. The office assigns crews for the week, and every crew&rsquo;s next five working days go out by email each afternoon &mdash; with any day that still has no job called out.</p>
-      <span class="who"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>VP, foremen &amp; office</span>
-      <div class="go">
-        <span class="url">schedule.ryancont.com</span>
-        <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
-      </div>
-    </a>
-
     <a class="card" href="https://dot.ryancont.com" target="_blank" rel="noopener">
       <div class="icon" aria-hidden="true">
         <svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M16 10h2"/><path d="M16 14h2"/><path d="M6.17 15a3 3 0 0 1 5.66 0"/><circle cx="9" cy="11" r="2"/></svg>
@@ -354,6 +361,7 @@
         <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </div>
     </a>
+
     <a class="card" href="https://timeoff.ryancont.com" target="_blank" rel="noopener">
       <div class="icon" aria-hidden="true">
         <svg viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/></svg>
@@ -367,18 +375,6 @@
       </div>
     </a>
 
-    <a class="card" href="https://repairdashboard.ryancont.com" target="_blank" rel="noopener">
-      <div class="icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
-      </div>
-      <h2>Repair Dashboard</h2>
-      <p>The shop&rsquo;s live board of open repair requests. Triage what&rsquo;s urgent or down, assign a mechanic, and move jobs through to Repaired. Password protected.</p>
-      <span class="who"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>Shop &amp; managers</span>
-      <div class="go">
-        <span class="url">repairdashboard.ryancont.com</span>
-        <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
-      </div>
-    </a>
     <a class="card" href="https://gear.ryancont.com" target="_blank" rel="noopener">
       <div class="icon" aria-hidden="true">
         <svg viewBox="0 0 24 24"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>
@@ -392,16 +388,55 @@
       </div>
     </a>
 
+    </div>
+  </section>
+
+  <section class="group">
+    <h2 class="sec">Shop</h2>
+    <div class="grid">
+
+    <a class="card" href="https://repairdashboard.ryancont.com" target="_blank" rel="noopener">
+      <div class="icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
+      </div>
+      <h2>Repair Dashboard</h2>
+      <p>The shop&rsquo;s live board of open repair requests. Triage what&rsquo;s urgent or down, assign a mechanic, and move jobs through to Repaired. Password protected.</p>
+      <span class="who"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>Shop &amp; managers</span>
+      <div class="go">
+        <span class="url">repairdashboard.ryancont.com</span>
+        <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+      </div>
+    </a>
+
     <a class="card" href="https://lowboy.ryancont.com" target="_blank" rel="noopener">
       <div class="icon" aria-hidden="true">
         <svg viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
       </div>
       <h2>Low-Boy Matt</h2>
-      <span class="wip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>Under Construction and Not Being Used.</span>
       <p>Ask for a piece of equipment or a load to be moved between jobs, the Elko shop and the boneyards. See what&rsquo;s on the truck today, what&rsquo;s scheduled next, and where every unit has been.</p>
       <span class="who"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>Field, shop &amp; office</span>
       <div class="go">
         <span class="url">lowboy.ryancont.com</span>
+        <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+      </div>
+    </a>
+
+    </div>
+  </section>
+
+  <section class="group">
+    <h2 class="sec">Office</h2>
+    <div class="grid">
+
+    <a class="card" href="https://schedule.ryancont.com" target="_blank" rel="noopener">
+      <div class="icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
+      </div>
+      <h2>Crew Schedule</h2>
+      <p>Which crew is at which job, day by day. The office assigns crews for the week, and every crew&rsquo;s next five working days go out by email each afternoon &mdash; with any day that still has no job called out.</p>
+      <span class="who"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>VP, foremen &amp; office</span>
+      <div class="go">
+        <span class="url">schedule.ryancont.com</span>
         <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
       </div>
     </a>
@@ -419,12 +454,31 @@
       </div>
     </a>
 
+    <a class="card" href="https://milestones.ryancont.com" target="_blank" rel="noopener">
+      <div class="icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M3 12h18"/><path d="m12 3 4 4-4 4-4-4z"/><path d="m7 17 2.5 2.5L12 17"/><path d="M17 8v4"/><path d="M17 16v4"/></svg>
+      </div>
+      <h2>Milestones</h2>
+      <p>Every job&rsquo;s contract deadlines on one timeline &mdash; substantial completion, interim milestones, phase windows and what each day late costs. The office marks each one on track, off track or complete with the date.</p>
+      <span class="who"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>Office, PMs &amp; owners</span>
+      <div class="go">
+        <span class="url">milestones.ryancont.com</span>
+        <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+      </div>
+    </a>
+
+    </div>
+  </section>
+
+  <section class="group notlive">
+    <h2 class="sec">Not Live &mdash; Future Apps</h2>
+    <div class="grid">
+
     <a class="card" href="https://ryan-fleetview.vercel.app/" target="_blank" rel="noopener">
       <div class="icon" aria-hidden="true">
         <svg viewBox="0 0 24 24"><path d="M20 10c0 4.99-5.16 10.2-7.09 11.95a1.35 1.35 0 0 1-1.82 0C9.16 20.2 4 14.99 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
       </div>
       <h2>FleetView</h2>
-      <span class="wip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>Under Construction and Not Being Used.</span>
       <p>A live map of where all 41 pieces of heavy equipment are sitting &mdash; backhoes, loaders, dozers and compaction, by job site and boneyard. Move a unit to a new location right on the page. Password protected.</p>
       <span class="who"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>Shop, PMs &amp; dispatch</span>
       <div class="go">
@@ -438,7 +492,6 @@
         <svg viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>
       </div>
       <h2>Jobs</h2>
-      <span class="wip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>Under Construction and Not Being Used.</span>
       <p>Daily worksheets for every crew &mdash; who worked where, what got done, and how far along each job is. One place to see progress across all active work.</p>
       <span class="who"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>Foremen, PMs &amp; office</span>
       <div class="go">
@@ -447,23 +500,9 @@
       </div>
     </a>
 
-    <a class="card" href="https://milestones.ryancont.com" target="_blank" rel="noopener">
-      <div class="icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><path d="M3 12h18"/><path d="m12 3 4 4-4 4-4-4z"/><path d="m7 17 2.5 2.5L12 17"/><path d="M17 8v4"/><path d="M17 16v4"/></svg>
-      </div>
-      <h2>Milestones</h2>
-      <span class="wip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>Under Construction and Not Being Used.</span>
-      <p>Every job&rsquo;s contract deadlines on one timeline &mdash; substantial completion, interim milestones, phase windows and what each day late costs. The office marks each one on track, off track or complete with the date.</p>
-      <span class="who"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>Office, PMs &amp; owners</span>
-      <div class="go">
-        <span class="url">milestones.ryancont.com</span>
-        <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
-      </div>
-    </a>
+    </div>
+  </section>
 
-    <!-- ============ END OF SITE TILES ============ -->
-
-  </div>
 </main>
 
 <footer>
